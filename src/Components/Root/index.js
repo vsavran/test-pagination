@@ -43,6 +43,7 @@ function Root() {
         })
         return itemFromPage
       })
+      localStorage.removeItem('pagesData')
     }
   },[])
 

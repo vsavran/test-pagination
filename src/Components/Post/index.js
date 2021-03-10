@@ -46,7 +46,6 @@ function Post() {
   }
 
   const handleSortEnd = ({oldIndex, newIndex}) => {
-    console.log('started')
     setComments(arrayMove(comments, newIndex, oldIndex))
   }
   const getLocalData = () => JSON.parse(localStorage.getItem('pagesData'))
@@ -58,6 +57,7 @@ function Post() {
   useEffect(() => {
     post.comments?.data && setComments(post.comments?.data)
   }, [post])
+
   return (
     <Container>
       <Column>

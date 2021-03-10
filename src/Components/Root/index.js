@@ -36,12 +36,10 @@ function Root() {
     const pagesData = JSON.parse(localStorage.getItem('pagesData'))
     if(pagesData){
       const itemFromPage = Math.ceil(pagesData.current/perPage)
-      setPage(prev => {
-        refetch({
-          limit: itemFromPage,
-          page: itemFromPage
-        })
-        return itemFromPage
+      setPage(itemFromPage)
+      refetch({
+        limit: itemFromPage,
+        page: itemFromPage
       })
       localStorage.removeItem('pagesData')
     }

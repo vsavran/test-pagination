@@ -1,0 +1,9 @@
+{
+  "processors": ["stylelint-processor-styled-components"],
+  "extends": ["stylelint-config-styled-components"],
+  "syntax": "scss",
+  "rules": {
+    "property-no-vendor-prefix": null,
+    "value-no-vendor-prefix": null
+  }
+}

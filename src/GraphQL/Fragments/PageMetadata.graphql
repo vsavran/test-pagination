@@ -1,0 +1,3 @@
+fragment PageMetadata on PageMetadata {
+  totalCount
+}

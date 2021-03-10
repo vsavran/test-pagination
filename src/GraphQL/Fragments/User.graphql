@@ -1,0 +1,13 @@
+fragment User on User {
+  id
+  name
+  username
+  email
+
+  posts {
+    data {
+      id
+      title
+    }
+  }
+}

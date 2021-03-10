@@ -1,0 +1,20 @@
+#import "./BaseUser.graphql"
+
+fragment Post on Post {
+  id
+  title
+  body
+
+  user {
+    ...BaseUser
+  }
+
+  comments {
+    data {
+      id
+      name
+      email
+      body
+    }
+  }
+}

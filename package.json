@@ -1,0 +1,91 @@
+{
+  "name": "startupcraft-web-app",
+  "version": "0.0.2",
+  "private": true,
+  "scripts": {
+    "dev": "craco start",
+    "build": "craco build",
+    "test": "craco test --env=jsdom",
+    "analyze": "source-map-explorer build/static/js/*.js",
+    "clear:cache": "rimraf node_modules/.cache",
+    "lint": "cross-env CI=true eslint src",
+    "lint:fix": "yarn lint --fix",
+    "stylelint": "cross-env CI=true stylelint src",
+    "stylelint:fix": "yarn stylelint --fix",
+    "postinstall": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,json,scss}": [
+      "eslint --fix",
+      "stylelint",
+      "prettier --config .prettierrc.js --write"
+    ]
+  },
+  "dependencies": {
+    "@apollo/client": "3.3.11",
+    "@storeon/localstorage": "1.2.0",
+    "@styled-system/space": "5.1.2",
+    "array-move": "3.0.1",
+    "faker": "5.4.0",
+    "graphql": "15.5.0",
+    "graphql-tag": "2.11.0",
+    "history": "5.0.0",
+    "luxon": "1.26.0",
+    "nanoid": "3.1.20",
+    "prop-types": "15.7.2",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-router": "5.2.0",
+    "react-router-config": "5.1.1",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "4.0.3",
+    "react-sortable-hoc": "1.11.0",
+    "storeon": "3.1.4",
+    "styled-components": "5.2.1",
+    "styled-normalize": "8.0.7"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "7.13.0",
+    "@babel/plugin-proposal-decorators": "7.13.5",
+    "@craco/craco": "6.1.1",
+    "@loadable/babel-plugin": "5.13.2",
+    "@loadable/webpack-plugin": "5.14.2",
+    "@startupcraft/dotenv-config": "0.0.2",
+    "babel-plugin-styled-components": "1.12.0",
+    "circular-dependency-plugin": "5.2.2",
+    "craco-esbuild": "0.2.1",
+    "cross-env": "7.0.3",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-config-react-app": "6.0.0",
+    "eslint-loader": "4.0.2",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-json": "2.1.2",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-prettier": "3.3.1",
+    "eslint-plugin-react": "7.22.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "eslint-plugin-simple-import-sort": "7.0.0",
+    "husky": "5.1.3",
+    "lint-staged": "10.5.4",
+    "prettier": "2.2.1",
+    "stylelint": "13.11.0",
+    "stylelint-config-styled-components": "0.1.1",
+    "stylelint-processor-styled-components": "1.10.0",
+    "webpack-cli": "4.5.0",
+    "webpack-node-externals": "2.5.2"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
+  }
+}
